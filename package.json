@@ -4,12 +4,16 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "concurrently": "8"
+  },
+   "scripts": {
+    "dev": "bun run --parallel --cwd packages/server dev & bun run --parallel --cwd packages/client dev"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
-  "workspaces":[
+  "workspaces": [
     "packages/*"
   ]
 }
