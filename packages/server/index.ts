@@ -1,19 +1,19 @@
-import express  from "express";
-import type { Request,Response } from "express";
-import dotenv from "dotenv";
+import express from 'express';
+import type { Request, Response } from 'express';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app= express();
+const app = express();
 const port = process.env.PORT || 3000;
-app.get("/" , (req: Request,res:Response)=>{
-    res.send("Hello Kitu!!");
+app.get('/', (req: Request, res: Response) => {
+   res.send('Hello Kitu!!');
 });
 
-app.get("/api/test" ,(req:Request ,res:Response)=>{
-    res.json({message: "Hey Kitu!! Welcome to json"})
-})
+app.get('/api/test', (req: Request, res: Response) => {
+   res.json({ message: 'Hey Kitu!! Welcome to json' });
+});
 
-app.listen(port , ()=>{
-    console.log(`Server is sunning on http://localhost:${port}`);
-})
+app.listen(port, () => {
+   console.log(`Server is sunning on http://localhost:${port}`);
+});

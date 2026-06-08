@@ -1,19 +1,21 @@
 {
-  "name": "my-app",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest",
-    "concurrently": "8"
-  },
+   "name": "my-app",
+   "module": "index.ts",
+   "type": "module",
+   "private": true,
+   "devDependencies": {
+      "@types/bun": "latest",
+      "concurrently": "8",
+      "prettier": "^3.8.3"
+   },
    "scripts": {
-    "dev": "bun run --parallel --cwd packages/server dev & bun run --parallel --cwd packages/client dev"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+      "dev": "bun run --parallel --cwd packages/server dev & bun run --parallel --cwd packages/client dev",
+      "format": "prettier --write ."
+   },
+   "peerDependencies": {
+      "typescript": "^5"
+   },
+   "workspaces": [
+      "packages/*"
+   ]
 }
