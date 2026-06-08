@@ -1,16 +1,20 @@
 
 import { useEffect, useState } from 'react'
+import { Button } from "@/components/ui/button"
 
 function App() {
 const [message,setMessage]=useState('');
 
 useEffect(()=>{
-   fetch('api/test')
+   fetch('/api/test')
    .then(res=>res.json())
    .then(data => setMessage(data.message));
 },[])
   return( 
-    <p className='font-bold p-4 bg-blue-200'>{message}</p>
+    <div className="flex min-h-svh flex-col items-center justify-center">     
+      <Button>Click me</Button>
+       <p>{message}</p>
+    </div>
    )
 }
 
